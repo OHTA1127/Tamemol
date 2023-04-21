@@ -1,0 +1,12 @@
+<h1>新規投稿</h1>
+<%= form_with model: @post, local:true do |f| %>
+  <h4>買うか悩んでいるもの</h4>
+  <%= f.text_field :product %>
+  <h4>カテゴリー</h4>
+  <%= f.select :category, options_for_select(['食品', '日用品', '交通費', '趣味', 'その他']) %>
+  <h4>金額</h4>
+  <%= f.text_field :price %>
+  <h4>コメント</h4>
+  <%= f.text_area :comment %>
+  <%= f.submit '保存' %>
+<% end %>

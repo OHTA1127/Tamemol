@@ -1,0 +1,16 @@
+<div class="profile">
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%><br>
+  <%= @user.name %><br>
+  <%= link_to "編集", edit_user_path(@user) %><br>
+  <p class="money_text">我慢目標</p>¥<%= @user.goal_money %><br>
+  <p class="money_text">我慢した</p>¥<%= @total_unbuy %><br>
+  <p class="money_text">買っちゃった</p>¥<%= @total_buy %><br>
+  <p class="goal_text">目標:<%= @user.goal_comment %></p>
+  <%= link_to users_path do %>
+    <p class="all_users">みんなの我慢額</p>
+  <% end %>
+  <p>目標達成率</p><%= @completion_rate * 100 %>%<br>
+  <p>過去の我慢</p>
+  <%= link_to "記録する", new_post_path %><br>
+  <%= link_to "悩んでいるものリスト", posts_path %><br>
+</div>

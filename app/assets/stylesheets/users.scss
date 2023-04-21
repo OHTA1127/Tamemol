@@ -1,0 +1,34 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users_main {
+  display: flex;
+}
+
+.card {
+  margin: 20px;
+}
+
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.money_text, .goal_text {
+  font-weight: bold;
+}
+
+.all_users {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.rounded-image {
+  border-radius: 50%;
+}
