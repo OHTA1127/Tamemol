@@ -20,10 +20,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+.navbar-dark-custom .navbar-brand,
+.navbar-dark-custom .navbar-nav .nav-link {
+  color: black;
+}
 .navbar {
   font-family: 'Anton', sans-serif;
 }
 
 footer {
   font-family: 'Anton', sans-serif;
+}
+
+body {
+  background-image: url('background_image.jpg');
 }

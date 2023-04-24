@@ -4,30 +4,34 @@
   <table class='table table-hover table-inverse'>
     <thead>
       <tr>
-        <th>商品名</th>
-        <th>金額</th>
-        <th>カテゴリー</th>
-        <th colspan="3"></th>
+        <th colspan="2">商品名</th>
+        <th colspan="2">金額</th>
+        <th colspan="2">カテゴリー</th>
+        <th colspan="2"></th>
+        <th colspan="2"></th>
       </tr>
     </thead>
     <tbody>
       <% @posts_unbuy.each do |post| %>
         <tr>
-          <th>
+          <th colspan="2">
             <%= link_to post_path(post.id) do %>
               <%= post.product %>
             <% end %>
           </th>
-          <th>
+          <th colspan="2">
             <%= post.price %>
           </th>
-          <th>
+          <th colspan="2">
             <%= post.category %>
           </th>
-          <th>
+          <th colspan="2">
             <% if post.purchase_status == false %>
-              <%= link_to "買った", post_path(post), class: "btn btn-primary", method: :put %>
+              <%= link_to "買った", post_path(post), class: "btn btn-dark", method: :put %>
             <% end %>
+          </th>
+          <th colspan="2">
+            <%= link_to "削除", post_path(post), class: "btn btn-dark", method: :delete %>
           </th>
         </tr>
       <% end %>
@@ -37,31 +41,38 @@
   <table class='table table-hover table-inverse'>
     <thead>
       <tr>
-        <th>商品名</th>
-        <th>金額</th>
-        <th>カテゴリー</th>
-        <th colspan="3"></th>
+        <th colspan="2">商品名</th>
+        <th colspan="2">金額</th>
+        <th colspan="2">カテゴリー</th>
+        <th colspan="2"></th>
+        <th colspan="2"></th>
       </tr>
     </thead>
     <tbody>
       <% @posts_buy.each do |post| %>
         <tr>
-          <th>
+          <th colspan="2">
             <%= link_to post_path(post.id) do %>
               <%= post.product %>
             <% end %>
           </th>
-          <th>
+          <th colspan="2">
             <%= post.price %>
           </th>
-          <th>
+          <th colspan="2">
             <%= post.category %>
           </th>
-          <th></th>
+          <th colspan="2"></th>
+          <th colspan="2">
+            <%= link_to "削除", post_path(post), class: "btn btn-dark", method: :delete %>
+          </th>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= link_to "記録する", new_post_path %>
-  <%= link_to "My pageへ", user_path(current_user) %>
+  <div class="text-center">
+    <%= link_to "記録する", new_post_path, class: "btn btn-dark" %>
+    <%= link_to "My pageへ", user_path(current_user), class: "btn btn-dark" %>
+  </div>
 </div>
+

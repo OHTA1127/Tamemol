@@ -1,16 +1,60 @@
-<div class="profile">
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%><br>
-  <%= @user.name %><br>
-  <%= link_to "編集", edit_user_path(@user) %><br>
-  <p class="money_text">我慢目標</p>¥<%= @user.goal_money %><br>
-  <p class="money_text">我慢した</p>¥<%= @total_unbuy %><br>
-  <p class="money_text">買っちゃった</p>¥<%= @total_buy %><br>
-  <p class="goal_text">目標:<%= @user.goal_comment %></p>
-  <%= link_to users_path do %>
-    <p class="all_users">みんなの我慢額</p>
-  <% end %>
-  <p>目標達成率</p><%= @completion_rate * 100 %>%<br>
-  <p>過去の我慢</p>
-  <%= link_to "記録する", new_post_path %><br>
-  <%= link_to "悩んでいるものリスト", posts_path %><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8 border">
+          <div class="wrapper">
+            <div class="user_info">
+              <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%>
+              <%= @user.name %>
+              <%= link_to "編集", edit_user_path(@user), class: "btn btn-dark" %>
+            </div>
+            <div class="info_wrapper">
+              <div class="money_info">
+                <p class="money_text">
+                  我慢目標
+                  <span>¥<%= @user.goal_money %></span>
+                </p>
+                <p class="money_text">
+                  我慢した
+                  <span>¥<%= @total_unbuy %></span>
+                </p>
+                <p class="money_text">
+                  買っちゃった
+                  <span>¥<%= @total_buy %></span>
+                </p>
+              </div>
+              <p class="goal_text">目標:<%= @user.goal_comment %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 border text-center">
+          <%= link_to users_path do %>
+            <p class="all_users mt-3">みんなの我慢額</p>
+          <% end %>
+          <% @users.each do |user| %>
+            <div class="d-flex align-items-center">
+              <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image" %>
+              <%= user.total_unbuy %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 border">
+          <p>目標達成率</p><%= @completion_rate * 100 %>%
+        </div>
+        <div class="col-md-4 border">
+          <p>過去の我慢</p>
+          ¥<%= @total_unbuy %>
+        </div>
+        <div class="col-md-4 d-flex align-items-center">
+          <div class="d-flex justify-content-between w-100">
+            <%= link_to "記録する", new_post_path, class: "btn btn-dark" %>
+            <%= link_to "悩んでいるものリスト", posts_path, class: "btn btn-dark" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

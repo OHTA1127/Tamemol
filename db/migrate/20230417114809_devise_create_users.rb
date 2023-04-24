@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :profile_image_id # 「refile」による画像保存用
       t.string :goal_comment# 我慢目標文章
       t.integer :goal_money# 我慢目標金額
+      t.integer :total_unbuy
       t.timestamps null: false
     end
 
