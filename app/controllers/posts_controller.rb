@@ -15,14 +15,13 @@ class PostsController < ApplicationController
   end
 
   def index
-    # @posts = Post.page(params[:page]).reverse_order
-    @start_date = Date.current.beginning_of_month
-    @end_date = @start_date.end_of_month
-    @posts_buy = Post.where(purchase_status: true).where(user_id: current_user.id).order("created_at DESC").where(created_at: @start_date..@end_date)
+    @posts_buy = Post.where(purchase_status: true).where(user_id: current_user.id).order("created_at DESC")
     # puts "ここを見ろ"
     # p @posts_buy
-    @posts_unbuy = Post.where(purchase_status: false).where(user_id: current_user.id).order("created_at DESC").where(created_at: @start_date..@end_date)
+    @posts_unbuy = Post.where(purchase_status: false).where(user_id: current_user.id).order("created_at DESC")
     # p @posts
+    @posts_buy_month = @posts_buy.group_by { |post| post.created_at.beginning_of_month }
+    @posts_unbuy_month = @posts_unbuy.group_by { |post| post.created_at.beginning_of_month}
 
   end
 
