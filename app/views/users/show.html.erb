@@ -1,57 +1,61 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-8 border">
+        <div class="col-md-9 border">
           <div class="wrapper">
             <div class="user_info">
               <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%>
-              <%= @user.name %>
+              <strong style="font-size: 24px;"><%= @user.name %></strong>
               <%= link_to "編集", edit_user_path(@user), class: "btn btn-dark" %>
             </div>
             <div class="info_wrapper">
               <div class="money_info">
                 <p class="money_text">
-                  我慢目標
-                  <span>¥<%= @user.goal_money %></span>
+                  <i class="fas fa-fire" style="color: #ff4000">我慢目標</i>
+                  <span><strong>¥<%= @user.goal_money %></strong></span>
                 </p>
                 <p class="money_text">
-                  我慢した
-                  <span>¥<%= @total_unbuy %></span>
+                  <i class="fas fa-thumbs-up" style="color: #ffa200">我慢した</i>
+                  <span><strong>¥<%= @total_unbuy %></strong></span>
                 </p>
                 <p class="money_text">
-                  買っちゃった
-                  <span>¥<%= @total_buy %></span>
+                  <i class="fas fa-yen-sign" style="color: #005eff">買った</i>
+                  <span><strong>¥<%= @total_buy %></strong></span>
                 </p>
               </div>
               <p class="goal_text">目標:<%= @user.goal_comment %></p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 border text-center">
+        <div class="col-md-3 border text-center">
           <%= link_to users_path do %>
             <p class="all_users mt-3">みんなの我慢額</p>
           <% end %>
           <% @users.each do |user| %>
             <div class="d-flex align-items-center">
-              <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image" %>
-              <%= user.total_unbuy %>
+              <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image", style: "margin-right: 20px" %>
+              ¥<%= user.total_unbuy %>
             </div>
           <% end %>
+          <%= paginate @users %>
         </div>
       </div>
+    </div>
+    <div class="col-md-12">
       <div class="row">
-        <div class="col-md-4 border">
-          <p>目標達成率</p><%= @completion_rate * 100 %>%
+        <div class="col-md-4 border text-center goal-rate small-text">
+          <p class="under-text">目標達成率</p>
+          <p><strong><%= @completion_rate * 100 %>%</strong></p>
         </div>
-        <div class="col-md-4 border">
-          <p>過去の我慢</p>
-          ¥<%= @total_unbuy %>
+        <div class="col-md-4 border text-center total-unbuy small-text">
+          <p class="under-text">我慢合計</p>
+          <p><strong>¥<%= @total_unbuy %></strong></p>
         </div>
-        <div class="col-md-4 d-flex align-items-center">
-          <div class="d-flex justify-content-between w-100">
-            <%= link_to "記録する", new_post_path, class: "btn btn-dark" %>
-            <%= link_to "悩んでいるものリスト", posts_path, class: "btn btn-dark" %>
+        <div class="col-md-4 d-flex align-items-center justify-content-center border">
+          <div class="d-flex flex-column justify-content-between">
+            <%= link_to "記録する", new_post_path, class: "btn btn-dark btn-block btn-tall mb-5" %>
+            <%= link_to "悩んでいるものリスト", posts_path, class: "btn btn-dark btn-block btn-tall" %>
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @latest_month = Post.order(created_at: :desc).first.created_at.strftime('%Y年%m月')
     @posts_buy = Post.where(purchase_status: true).where(user_id: current_user.id).order("created_at DESC")
     # puts "ここを見ろ"
     # p @posts_buy
@@ -22,7 +23,6 @@ class PostsController < ApplicationController
     # p @posts
     @posts_buy_month = @posts_buy.group_by { |post| post.created_at.beginning_of_month }
     @posts_unbuy_month = @posts_unbuy.group_by { |post| post.created_at.beginning_of_month}
-
   end
 
   def show

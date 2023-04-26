@@ -2,22 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: none;
-  padding: 0;
-}
-
-.row {
-  margin: 0;
-}
-
-.col-md-12 {
-  padding: 0;
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90%;
 }
 
 .users_main {
@@ -32,15 +20,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 20px 20px 20px 60px;
 }
 
-.money_info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
+.money_text {
+  font-size: 24px; /* 言葉のフォントサイズ */
+}
+
+.money_text span {
+  font-size: 36px; /* 数値のフォントサイズ */
 }
 
 .money_text {
@@ -58,8 +46,8 @@ body {
 
 .wrapper {
   display: flex;
-  justify-content: space-between; /* user_info と money_info を横に並べる */
-  padding: 20px;
+  justify-content: space-between; /* user_info と money_info を横に並べる */ /* ここをなくすことで好きなようにユーザー情報と金額情報の位置を調整することができる*/
+  padding-top: 45px;
 }
 
 .info_wrapper {
@@ -82,9 +70,41 @@ body {
 .goal_text {
   margin-top: 20px;
   font-weight: bold;
+  display: flex;
+  margin-left: 20px;
+  font-size: 30px;
 }
 
 .all_users {
   text-align: center;
   margin-top: 20px;
+}
+
+.btn-tall {
+  height: 50px;
+}
+
+.col-md-4 {
+  height: 300px;
+  margin-top : 30px;
+}
+
+// .col-md-9 {
+//   outline: 4px solid black;
+//   outline-offset: -15px;
+// }
+
+.goal-rate,
+.total-unbuy {
+  padding-top: 40px;
+  // font-size: 40px;
+}
+
+.small-text  {
+  font-size: 40px;
+}
+
+.rounded-image {
+  width: 75px;
+  height: 75px;
 }
