@@ -1,14 +1,16 @@
-<div class="users_main">
-<h2>ユーザー一覧</h2>
-<% @users.each do |user| %>
-<div class="card" style="width: 18rem;">
-  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%>
-  <div class="card-body">
-    <h5 class="card-title"><%= user.name %></h5>
-    <p class="card-text">目標：<%= user.goal_comment %></p>
-    <p class="card-text">目標金額: ¥<%= user.goal_money %></p>
-  </div>
+<h2 class="text-center">ユーザー一覧</h2>
+<div class="card-container">
+  <% @users.each do |user| %>
+    <div class="card bg-transparent border" style="width: 18rem;">
+      <div class="card-body">
+        <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%>
+        <h5 class="card-title"><%= user.name %></h5>
+        <p class="card-text">目標：<%= user.goal_comment %></p>
+        <p class="card-text">目標金額: ¥<%= user.goal_money %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
-<% end %>
+<div class="center">
+  <%= link_to "My pageへ", user_path(current_user.id), class: "btn btn-dark btn-lg btn-tall btn-center" %>
 </div>
-<%= link_to "My page", user_path(current_user.id) %><br>

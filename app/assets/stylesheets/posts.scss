@@ -9,9 +9,14 @@ table {
   table-layout: fixed;
 }
 
+.container {
+  color: white;
+}
+
 th, td {
   padding: 10px;
   vertical-align: middle;
+  color: white;
 }
 
 th {

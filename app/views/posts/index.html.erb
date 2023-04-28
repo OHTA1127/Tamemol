@@ -1,7 +1,7 @@
 <div class="container">
   <h1><%= @latest_month %>のリスト</h1>
   <%= form_tag(posts_path, method: "get") do %>
-  <%= select_tag "month", options_for_select(@posts_buy_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: true %>
+  <%= select_tag "month", options_for_select(@total_posts_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: true %>
   <%= submit_tag "月を選択" %>
   <% end %>
   <h3>我慢中</h3>

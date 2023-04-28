@@ -1,16 +1,26 @@
-<h1>編集</h1>
+<h2 class="text-center">プロフィール編集</h2>
 <%= form_with model:@user, local: true do |f| %>
-  <h4>Name</h4>
-  <%= f.text_field :name %>
+  <h4 class="text-center">Name</h4>
+  <div class="text-center">
+    <%= f.text_field :name, class: 'd-inline-block' %>
+  </div>
 
-  <h4>プロフィール画像</h4>
-  <%= f.attachment_field :profile_image %>
+  <h4 class="text-center">プロフィール画像</h4>
+  <div class="text-center">
+    <%= f.attachment_field :profile_image %>
+  </div>
 
-  <h4>目標</h4>
-  <%= f.text_area :goal_comment %>
+  <h4 class="text-center">目標</h4>
+  <div class="text-center">
+    <%= f.text_area :goal_comment %>
+  </div>
 
-  <h4>目標金額</h4>
-  <%= f.text_field :goal_money %>
+  <h4 class="text-center">目標金額</h4>
+  <div class="text-center">
+    <%= f.text_field :goal_money %>
+  </div>
 
-  <%= f.submit '更新' %>
+  <div class="text-center">
+    <%= f.submit '更新' %>
+  </div>
 <% end %>

@@ -15,8 +15,13 @@ class UsersController < ApplicationController
     @total_buy = @posts_buy.sum(:price)
     @total_unbuy = @posts_unbuy.sum(:price)
 
-    @goal_money = @user.goal_money
-    @completion_rate = (@total_unbuy.to_f / @user.goal_money).round(2)
+    if @user.goal_money.present?
+      @goal_money = @user.goal_money
+      @completion_rate = (@total_unbuy.to_f / @user.goal_money).round(2)
+    else
+      @goal_money = 0
+      @completion_rate = 0
+    end
     
     @users = User.page(params[:page]).reverse_order
     @users.each do |user|

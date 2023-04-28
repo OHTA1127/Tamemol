@@ -6,15 +6,25 @@
   margin-right: auto;
   margin-left: auto;
   max-width: 90%;
+  margin-top: 20px;
 }
 
-.users_main {
+
+.card-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
-  margin: 20px;
+  margin-bottom: 30px;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 
 .user_info {
   display: flex;
@@ -46,7 +56,7 @@
 
 .wrapper {
   display: flex;
-  justify-content: space-between; /* user_info と money_info を横に並べる */ /* ここをなくすことで好きなようにユーザー情報と金額情報の位置を調整することができる*/
+  justify-content: space-between;
   padding-top: 45px;
 }
 
@@ -89,11 +99,6 @@
   margin-top : 30px;
 }
 
-// .col-md-9 {
-//   outline: 4px solid black;
-//   outline-offset: -15px;
-// }
-
 .goal-rate,
 .total-unbuy {
   padding-top: 40px;
@@ -102,9 +107,22 @@
 
 .small-text  {
   font-size: 40px;
+  padding-top: 70px;
 }
 
 .rounded-image {
   width: 75px;
   height: 75px;
+}
+
+.goal-rate-text {
+  font-size: 25px;
+}
+
+.under-text {
+  font-size: 25px;
+}
+
+.d-flex.align-items-center {
+  padding-left: 40px;
 }
