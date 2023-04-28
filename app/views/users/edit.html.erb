@@ -1,26 +1,29 @@
-<h2 class="text-center">プロフィール編集</h2>
-<%= form_with model:@user, local: true do |f| %>
-  <h4 class="text-center">Name</h4>
-  <div class="text-center">
-    <%= f.text_field :name, class: 'd-inline-block' %>
-  </div>
+<div class="container">
+  <h2 class="text-center mb-4">プロフィール編集</h2>
+  <%= form_with model:@user, local: true do |f| %>
+    <div class="form-group text-center">
+      <h4>Name</h4>
+      <%= f.text_field :name, class: 'form-control w-25 mx-auto' %>
+    </div>
 
-  <h4 class="text-center">プロフィール画像</h4>
-  <div class="text-center">
-    <%= f.attachment_field :profile_image %>
-  </div>
+    <div class="form-group text-center">
+      <h4>プロフィール画像</h4>
+      <%= f.attachment_field :profile_image %>
+    </div>
 
-  <h4 class="text-center">目標</h4>
-  <div class="text-center">
-    <%= f.text_area :goal_comment %>
-  </div>
+    <div class="form-group text-center">
+      <h4>目標</h4>
+      <%= f.text_area :goal_comment, class: 'form-control w-50 mx-auto' %>
+    </div>
 
-  <h4 class="text-center">目標金額</h4>
-  <div class="text-center">
-    <%= f.text_field :goal_money %>
-  </div>
+    <div class="form-group text-center">
+      <h4>目標金額</h4>
+      <%= f.text_field :goal_money, class: 'form-control w-25 mx-auto' %>
+    </div>
 
-  <div class="text-center">
-    <%= f.submit '更新' %>
-  </div>
-<% end %>
+    <<div class="text-center">
+      <%= f.submit '更新', class: 'btn btn-primary w-25 mx-auto mt-4' %>
+    </div>
+  <% end %>
+</div>
+</div>

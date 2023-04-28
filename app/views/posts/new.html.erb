@@ -1,32 +1,25 @@
-<h2 class="text-center">新規投稿</h2>
-<%= form_with model: @post, local:true do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+<div class="container">
+  <h2 class="text-center mb-4">新しい記録</h2>
+  <%= form_with model:@post, local: true do |f| %>
+    <div class="form-group text-center">
+      <h4>商品名</h4>
+      <%= f.text_field :product, class: 'form-control w-25 mx-auto' %>
+    </div>
+
+    <div class="form-group text-center">
+      <h4>カテゴリー</h4>
+      <%= f.select :category, options_for_select(['食品', '日用品', '交通費', '趣味', 'その他'])%>
+    </div>
+
+    <div class="form-group text-center">
+      <h4>金額</h4>
+      <%= f.text_field :price, class: 'form-control w-25 mx-auto' %>
+    </div>
+
+    <<div class="text-center">
+      <%= f.submit '保存', class: 'btn btn-primary w-25 mx-auto mt-4' %>
     </div>
   <% end %>
-  <h4 class="text-center">買うか悩んでいるもの</h4>
-  <div class="text-center">
-    <%= f.text_field :product %>
-  </end>
-  
-  <h4 class="text-center">カテゴリー</h4>
-  <div class="text-center">
-    <%= f.select :category, options_for_select(['食品', '日用品', '交通費', '趣味', 'その他']) %>
-  </end>
-  
-  <h4 class="text-center">金額</h4>
-  <div class="text-center">
-    <%= f.text_field :price %>
-  </end>
-  
-  <div class="text-center">
-    <%= f.submit '保存' %>
-  </end>
-<% end %>
+</div>
