@@ -138,3 +138,35 @@
 .form-group {
   justify-content: center;
 }
+
+@media screen and (max-width: 768px) {
+  .col-md-9 {
+    width: 100%;
+  }
+  .col-md-3 {
+    width: 100%;
+  }
+  .total-unbuy {
+    margin-top: 20px;
+  }
+  .goal-rate, .total-unbuy {
+    margin-bottom: 20px;
+  }
+}
+
+/* さらに小さい画面用のスタイル */
+@media screen and (max-width: 576px) {
+  .user_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .wrapper {
+    padding: 20px;
+  }
+  .goal-rate, .total-unbuy {
+    padding: 20px;
+  }
+}

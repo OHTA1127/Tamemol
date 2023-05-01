@@ -1,11 +1,10 @@
 <div class="container">
-  <h1><%= @latest_month %>のリスト</h1>
   <%= form_tag(posts_path, method: "get") do %>
-  <%= select_tag "month", options_for_select(@total_posts_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: true %>
+  <%= select_tag "month", options_for_select(@total_posts_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: false %>
   <%= submit_tag "月を選択" %>
   <% end %>
+  <h1><%= @selected_month.strftime('%Y年%m月') %>のリスト</h1>
   <h3>我慢中</h3>
-  <% @posts_unbuy_month.each do |month, posts| %>
   <table class='table table-hover table-inverse'>
     <thead>
       <tr>
@@ -42,9 +41,7 @@
       <% end %>
     </tbody>
   </table>
-  <% end %>
   <h3>買ったもの</h3>
-  <% @posts_buy_month.each do |month, posts| %>
   <table class='table table-hover table-inverse'>
     <thead>
       <tr>
@@ -77,7 +74,6 @@
       <% end %>
     </tbody>
   </table>
-  <% end %>
   <div class="text-center">
     <%= link_to "記録する", new_post_path, class: "btn btn-dark" %>
     <%= link_to "My pageへ", user_path(current_user), class: "btn btn-dark" %>

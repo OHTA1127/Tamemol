@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 
     @total_buy = @posts_buy.sum(:price)
     @total_unbuy = @posts_unbuy.sum(:price)
+    
+    @user_unbuy = Post.where(purchase_status: false).where(user_id: current_user.id)
+    @all_unbuy = @user_unbuy.sum(:price)
 
     if @user.goal_money.present?
       @goal_money = @user.goal_money
