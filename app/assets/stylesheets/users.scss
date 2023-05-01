@@ -3,8 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container-fluid {
-  margin-right: auto;
-  margin-left: auto;
   max-width: 90%;
   margin-top: 20px;
 }
@@ -29,6 +27,10 @@
   justify-content: center;
 }
 
+.user_info, .money_info {
+  display: flex;
+  vertical-align: top;
+}
 
 .user_info {
   display: flex;
@@ -38,24 +40,16 @@
 }
 
 .money_text {
-  font-size: 24px; /* 言葉のフォントサイズ */
-}
-
-.money_text span {
-  font-size: 36px; /* 数値のフォントサイズ */
-}
-
-.money_text {
   margin-right: 10px;
   display: flex;
   flex-direction: column;
   margin: 0;
   width: 33%;
+  font-size: 20px;
 }
 
-.user_info, .money_info {
-  display: flex;
-  vertical-align: top;
+.money_text span {
+  font-size: 40px;
 }
 
 .wrapper {
@@ -78,8 +72,10 @@
 }
 
 .rounded-image {
-    border-radius: 50%;
-  }
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
 
 .goal_text {
   margin-top: 20px;
@@ -96,33 +92,26 @@
 
 .btn-tall {
   height: 50px;
+  margin: 40px 0;
 }
 
 .col-md-4 {
   height: 300px;
-  margin-top : 30px;
+  margin-top: 30px;
 }
 
 .goal-rate,
 .total-unbuy {
   padding-top: 40px;
-  // font-size: 40px;
+  font-size: 40px;
 }
 
-.small-text  {
+.small-text {
   font-size: 40px;
   padding-top: 70px;
 }
 
-.rounded-image {
-  width: 75px;
-  height: 75px;
-}
-
-.goal-rate-text {
-  font-size: 25px;
-}
-
+.goal-rate-text,
 .under-text {
   font-size: 25px;
 }
@@ -139,34 +128,76 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-  .col-md-9 {
-    width: 100%;
-  }
-  .col-md-3 {
-    width: 100%;
-  }
-  .total-unbuy {
-    margin-top: 20px;
-  }
-  .goal-rate, .total-unbuy {
-    margin-bottom: 20px;
-  }
-}
 
-/* さらに小さい画面用のスタイル */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    max-width: 90%;
+  }
+  
   .user_info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin: 10px 10px 10px 10px;
   }
+  .money_text {
+    margin: 0;
+    width: 33%;
+    font-size: 15px;
+  }
+  
+  .money_text span {
+    font-size: 20px;
+  }
+  
   .wrapper {
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
   }
-  .goal-rate, .total-unbuy {
-    padding: 20px;
+  
+  .goal_text {
+    font-size: 20px;
   }
+  
+  .all_users {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+    float: left;
+  }
+  .d-flex.align-items-center img {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .goal-rate,
+  .total-unbuy {
+    padding: 10px 0;
+    font-size: 40px;
+  }
+  
+  .btn-block {
+    display: block;
+    margin-right: 0;
+  }
+  
+  .col-md-4 {
+    height: 50px;
+    float: left;
+    display: flex;
+    display: inline-blocl;
+  }
+  
+  .btn-tall{
+  height: 35px;
+  margin: 5px 0;
+  }
+  
 }
+

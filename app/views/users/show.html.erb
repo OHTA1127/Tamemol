@@ -38,7 +38,9 @@
               ¥ <%= user.total_unbuy %>
             </div>
           <% end %>
-          <%= paginate @users %>
+          <div class="d-flex justify-content-center">
+            <%= paginate @users %>
+          </div>
         </div>
       </div>
     </div>
@@ -57,7 +59,7 @@
         </div>
         <div class="col-md-4 d-flex align-items-center justify-content-center">
           <div class="d-flex flex-column justify-content-between">
-            <%= link_to "記録する", new_post_path, class: "btn btn-dark btn-block btn-tall mb-5" %>
+            <%= link_to "記録する", new_post_path, class: "btn btn-dark btn-block btn-tall" %>
             <%= link_to "悩んでいるものリスト", posts_path, class: "btn btn-dark btn-block btn-tall" %>
           </div>
         </div>
