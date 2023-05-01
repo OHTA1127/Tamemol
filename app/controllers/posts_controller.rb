@@ -20,6 +20,8 @@ class PostsController < ApplicationController
     @month = params[:month]
     if @month.nil?
     @month = Date.current
+    else
+    @month = @month.slice(0..9)
     end
     # puts @month
     # @month = @month.slice(0..9)
