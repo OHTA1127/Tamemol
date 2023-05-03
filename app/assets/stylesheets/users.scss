@@ -85,6 +85,10 @@
   font-size: 30px;
 }
 
+.border-thick {
+  border: 5px solid black;
+}
+  
 .all_users {
   text-align: center;
   margin-top: 20px;
@@ -116,6 +120,10 @@
   font-size: 25px;
 }
 
+.my-money {
+  font-size: 60px;
+}
+
 .d-flex.align-items-center {
   padding-left: 40px;
 }
@@ -140,6 +148,7 @@
     align-items: center;
     margin: 10px 10px 10px 10px;
   }
+  
   .money_text {
     margin: 0;
     width: 33%;
@@ -187,6 +196,9 @@
     margin-right: 0;
   }
   
+  .my-money {
+    font-size: 40px;
+  }
   .col-md-4 {
     height: 50px;
     float: left;
@@ -198,6 +210,53 @@
   height: 35px;
   margin: 5px 0;
   }
-  
 }
 
+@media screen and (max-width: 425px) {
+  .container-fluid {
+    max-width: 90%;
+  }
+  
+  .money_text {
+    margin: 0;
+    width: 33%;
+    font-size: 10px;
+  }
+  
+  .money_text span {
+    font-size: 15px;
+  }
+  
+  .goal_text {
+    font-size: 15px;
+  }
+  
+  .all_users {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn-tall{
+  height: 35px;
+  margin: 5px 0;
+  }
+  
+  .goal-rate,
+  .total-unbuy {
+    // padding: 10px 0;
+    font-size: 25px;
+  }
+  
+  .my-money {
+    font-size: 25px;
+  }
+  
+  .goal-rate-text,
+  .under-text {
+    font-size: 20px;
+  }
+  
+  .index-main {
+    margin-top: 0px;
+  }
+}

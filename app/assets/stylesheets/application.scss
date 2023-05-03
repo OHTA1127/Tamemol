@@ -20,6 +20,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar-dark-custom .navbar-brand,
 .navbar-dark-custom .navbar-nav .nav-link {
   color: white;
@@ -39,7 +45,6 @@ footer {
 body {
   background-image: url('background_image3.jpg');
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
@@ -50,4 +55,29 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url('background-image5.jpg');
+    background-size: cover;
+    color: white;
+  }
+
+  .contents {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  footer {
+    font-family: 'Anton', sans-serif;
+    // position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
 }

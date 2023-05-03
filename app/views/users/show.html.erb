@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-9 border">
+        <div class="col-md-9">
           <div class="wrapper">
             <div class="user_info">
               <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%>
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 border text-center">
+        <div class="col-md-3 text-center border-thick">
           <%= link_to users_path do %>
             <p class="all_users mt-3"><strong>みんなの我慢額</strong></p>
           <% end %>
@@ -46,16 +46,16 @@
     </div>
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-5 border text-center goal-rate small-text">
+        <div class="col-md-5 text-center goal-rate small-text">
           <p class="goal-rate-text">目標達成率</p>
-          <p><strong><%= @completion_rate * 100 %>%</strong></p>
+          <p class="my-money"><strong><%= @completion_rate * 100 %>%</strong></p>
           <% if @user.goal_money.present? && @user.goal_money > 0 %>
             <p class="goal-rate-text">目標達成まであと...<strong>¥<%= @user.goal_money - @total_unbuy %></strong></p>
           <% end %>
         </div>
-        <div class="col-md-3 border text-center total-unbuy small-text">
+        <div class="col-md-3 text-center total-unbuy small-text">
           <p class="under-text">我慢合計</p>
-          <p><strong>¥<%= @all_unbuy %></strong></p>
+          <p class="my-money"><strong>¥<%= @all_unbuy %></strong></p>
         </div>
         <div class="col-md-4 d-flex align-items-center justify-content-center">
           <div class="d-flex flex-column justify-content-between">

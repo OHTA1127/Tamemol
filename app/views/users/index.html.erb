@@ -12,7 +12,9 @@
       </div>
     <% end %>
   </div>
-  <%= paginate @users %>
+  <div class="d-flex justify-content-center">
+    <%= paginate @users %>
+  </div>
   <div class="center">
     <%= link_to "My pageへ", user_path(current_user.id), class: "btn btn-dark btn-lg btn-tall btn-center" %>
   </div>

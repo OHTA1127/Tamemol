@@ -22,3 +22,10 @@ th, td {
 th {
     vertical-align: top;
   }
+
+@media screen and (max-width: 425px) {
+  th {
+    font-size: 10px;
+  }
+  
+}
