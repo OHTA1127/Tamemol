@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+# 新規記録作成
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
@@ -14,50 +15,46 @@ class PostsController < ApplicationController
     end
   end
 
+# 記録一覧ページ
   def index
-    # puts "ここを見ろ"
-    # p params
+
     @month = params[:month]
     if @month.nil?
     @month = Date.current
     else
     @month = @month.slice(0..9)
     end
-    # puts @month
-    # @month = @month.slice(0..9)
-    # puts @month
-    # @start = @month + '-01'
-    # @end = @month + '-31'
-    # puts @start
-    # puts @end
-    @posts_buy = Post.where(purchase_status: true).where(user_id: current_user.id).where(created_at: @month.in_time_zone.all_month).order("created_at DESC")
-    @latest_month = Post.order(created_at: :desc).first.created_at.strftime('%Y年%m月')
+
+    # 1ヶ月ごとのデートを収集し、Viewに表示する
     @total_posts = Post.where(user_id: current_user.id).order("created_at DESC")
-    # @posts_buy = Post.where(purchase_status: true).where(user_id: current_user.id).order("created_at DESC")
-    # puts "ここを見ろ"
-    # p @posts_buy
-    # @posts_unbuy = Post.where(purchase_status: false).where(user_id: current_user.id).order("created_at DESC")
-    @posts_unbuy = Post.where(purchase_status: false).where(user_id: current_user.id).where(created_at: @month.in_time_zone.all_month).order("created_at DESC")
-    # p @posts
     @total_posts_month = @total_posts.group_by { |post| post.created_at.beginning_of_month }
-    @posts_buy_month = @posts_buy.group_by { |post| post.created_at.beginning_of_month }
-    @posts_unbuy_month = @posts_unbuy.group_by { |post| post.created_at.beginning_of_month}
+
+    #表示する月の選択
     @selected_month = Date.parse(params[:month]) rescue Date.today.at_beginning_of_month
+
+    #1ヶ月間に買ったものの一覧
+    @posts_buy = Post.where(purchase_status: true).where(user_id: current_user.id).where(created_at: @month.in_time_zone.all_month).order("created_at DESC")
+
+    #1ヶ月に我慢したものの一覧
+    @posts_unbuy = Post.where(purchase_status: false).where(user_id: current_user.id).where(created_at: @month.in_time_zone.all_month).order("created_at DESC")
+
   end
 
+  #投稿データの詳細
   def show
     @post = Post.find(params[:id])
   end
 
+  #「買った」ボタンを押した際に「買ったもの」に振り分けられる
   def update
-    puts "ここを見ろ"
-    # p params
-    # puts params[:id]
     @post = Post.find(params[:id])
-    p @post
+
+    #「purchase_status」がtrueかfalseによって振り分ける
     @post.purchase_status = true
+
     @post.save
     redirect_to posts_path
+
   end
 
   def destroy

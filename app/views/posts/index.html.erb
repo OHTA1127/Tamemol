@@ -1,9 +1,12 @@
 <div class="container">
+  <!--表示する月の選択-->
   <%= form_tag(posts_path, method: "get") do %>
   <%= select_tag "month", options_for_select(@total_posts_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: false %>
   <%= submit_tag "月を選択" %>
   <% end %>
   <h1><%= @selected_month.strftime('%Y年%m月') %>のリスト</h1>
+  
+  <!--我慢しているものリスト-->
   <h3>我慢中</h3>
   <table class='table table-hover table-inverse'>
     <thead>
@@ -29,6 +32,7 @@
           <th colspan="2">
             <%= post.category %>
           </th>
+          <!--買ったボタンを押すことで「purchase_status」がtrueとなり買ったものに振り分けられる-->
           <th colspan="2">
             <% if post.purchase_status == false %>
               <%= link_to "買った", post_path(post), class: "btn btn-dark", method: :put %>
@@ -41,6 +45,8 @@
       <% end %>
     </tbody>
   </table>
+  
+  <!--買ったものリスト-->
   <h3>買ったもの</h3>
   <table class='table table-hover table-inverse'>
     <thead>
@@ -74,8 +80,11 @@
       <% end %>
     </tbody>
   </table>
+  
+  <!--それぞれのページへ遷移する-->
   <div class="text-center">
     <%= link_to "記録する", new_post_path, class: "btn btn-dark" %>
     <%= link_to "My pageへ", user_path(current_user), class: "btn btn-dark" %>
   </div>
+  
 </div>
