@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
+
+  # 新規記録作成のviewページ
   def new
     @post = Post.new
   end
 
 # 新規記録作成
   def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
-    @post.purchase_status = false
-    if @post.save
+    post = Post.new(post_params)
+    post.user_id = current_user.id
+    post.purchase_status = false
+    if post.save
       redirect_to posts_path(current_user)
     else
       render :new
@@ -25,7 +27,7 @@ class PostsController < ApplicationController
     @month = @month.slice(0..9)
     end
 
-    # 1ヶ月ごとのデートを収集し、Viewに表示する
+    # 1ヶ月ごとのデータを収集し、Viewに表示する
     @total_posts = Post.where(user_id: current_user.id).order("created_at DESC")
     @total_posts_month = @total_posts.group_by { |post| post.created_at.beginning_of_month }
 

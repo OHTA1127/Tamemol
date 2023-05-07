@@ -7,11 +7,13 @@
     Tamemoを使って、あなたも無駄遣いを減らし、賢くお金を使うライフスタイルを手に入れよう！<br>
   </h4>
   <div class="btn-wrapper col-4 mx-auto">
+    <% unless user_signed_in? %>
     <div class="row">
       <a class="btn btn-info btn-sm btn-block mb-3 sign_in" href="/users/sign_in">Log in</a>
     </div>
     <div class="row">
       <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign_up">Sign up</a>
     </div>
+    <% end %>
   </div>
 </div>
