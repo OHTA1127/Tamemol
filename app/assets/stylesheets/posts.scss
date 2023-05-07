@@ -23,9 +23,42 @@ th {
     vertical-align: top;
   }
 
+.post-details {
+  width: 50%;
+  padding: 20px;
+  margin-top: 30px;
+  margin: 0 auto;
+}
+
+.show-top {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.post-details__item {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.post-title {
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+.post-date {
+  font-size: 40px;
+}
+
+.post-details__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
 @media screen and (max-width: 425px) {
   th {
     font-size: 10px;
   }
-  
+
 }

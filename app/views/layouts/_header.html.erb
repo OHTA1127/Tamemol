@@ -6,6 +6,8 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
+      <!--ユーザーがログインしている場合-->
       <% if user_signed_in? %>
       <li class="nav-item">
         <a class="nav-link text-right" href="/">Home</a>
@@ -22,6 +24,8 @@
       <li class="nav-item">
         <a class="nav-link text-right" rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a>
       </li>
+
+      <!--ユーザーがログインしていない場合-->
       <% else %>
       <li class="nav-item">
         <a class="nav-link text-right" href="/">Home</a>
@@ -36,6 +40,7 @@
         <a class="nav-link text-right" href="/users/sign_in">Log in</a>
       </li>
       <% end %>
+
     </ul>
   </div>
 </nav>

@@ -1,15 +1,22 @@
 <!--投稿された商品の詳細ページ-->
-<div class="container">
-  <h2>商品</h2>
-    <h4>商品名</h4>
-    <%= @post.product %>
-    <h4>カテゴリー</h4>
-    <%= @post.category %>
-    <h4>金額</h4>
-    <%= @post.price %>
-    <h4>コメント</h4>
-    <%= @post.comment %>
 
-    <%= link_to "記録画面へ", new_post_path %>
-    <%= link_to "My pageへ", user_path(current_user) %>
-</div>
+  <div class="post-details">
+    <h1 class="show-top">商品詳細</h1>
+    <div class="post-details__item">
+      <h4 class="post-title">商品名</h4>
+      <p class="post-date"><%= @post.product %></p>
+    </div>
+    <div class="post-details__item">
+      <h4 class="post-title">カテゴリー</h4>
+      <p class="post-date"><%= @post.category %></p>
+    </div>
+    <div class="post-details__item">
+      <h4 class="post-title">金額</h4>
+      <p class="post-date">¥<%= @post.price %></p>
+    </div>
+    <div class="post-details__buttons">
+      <%= link_to "記録画面へ", new_post_path, class: "btn btn-dark" %>
+      <%= link_to "My pageへ", user_path(current_user), class: "btn btn-dark" %>
+    </div>
+  </div>
+
