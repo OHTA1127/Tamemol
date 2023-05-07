@@ -1,7 +1,10 @@
+<!--ユーザー詳細ページ-->
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
       <div class="row">
+
+        <!--ユーザーデータ表示-->
         <div class="col-md-9">
           <div class="wrapper">
             <div class="user_info">
@@ -28,6 +31,8 @@
             </div>
           </div>
         </div>
+
+        <!--ユーザー一覧部分-->
         <div class="col-md-3 text-center">
           <%= link_to users_path do %>
             <p class="all_users mt-3"><strong>みんなの我慢額</strong></p>
@@ -42,10 +47,14 @@
             <%= paginate @users %>
           </div>
         </div>
+
       </div>
     </div>
+
     <div class="col-md-12">
       <div class="row">
+
+        <!--ユーザーの今月の我慢目標達成率-->
         <div class="col-md-5 text-center goal-rate small-text">
           <p class="goal-rate-text">目標達成率</p>
           <p class="my-money"><strong><%= @completion_rate * 100 %>%</strong></p>
@@ -53,16 +62,21 @@
             <p class="goal-rate-text">目標達成まであと...<strong>¥<%= @user.goal_money - @total_unbuy %></strong></p>
           <% end %>
         </div>
+
+        <!--過去の我慢金額の合計-->
         <div class="col-md-3 text-center total-unbuy small-text">
           <p class="under-text">我慢合計</p>
           <p class="my-money"><strong>¥<%= @all_unbuy %></strong></p>
         </div>
+
+        <!--ページ遷移ボタン-->
         <div class="col-md-4 d-flex align-items-center justify-content-center">
           <div class="d-flex flex-column justify-content-between">
             <%= link_to "記録する", new_post_path, class: "btn btn-dark btn-block btn-tall" %>
             <%= link_to "悩んでいるものリスト", posts_path, class: "btn btn-dark btn-block btn-tall" %>
           </div>
         </div>
+
       </div>
     </div>
   </div>
