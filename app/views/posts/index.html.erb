@@ -1,13 +1,15 @@
 <div class="container">
   <!--表示する月の選択-->
-  <%= form_tag(posts_path, method: "get") do %>
-  <%= select_tag "month", options_for_select(@total_posts_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: false %>
-  <%= submit_tag "月を選択" %>
-  <% end %>
-  <h1><%= @selected_month.strftime('%Y年%m月') %>のリスト</h1>
+  <div class="month-date">
+    <%= form_tag(posts_path, method: "get") do %>
+    <%= select_tag "month", options_for_select(@total_posts_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: false %>
+    <%= submit_tag "月を選択" %>
+    <% end %>
+    <h1 class="month-view"><%= @selected_month.strftime('%Y年%m月') %>のリスト</h1>
+  </div>
   
   <!--我慢しているものリスト-->
-  <h3>我慢中</h3>
+  <h3 class="posts-title">我慢中</h3>
   <table class='table table-hover table-inverse'>
     <thead>
       <tr>
@@ -47,7 +49,7 @@
   </table>
   
   <!--買ったものリスト-->
-  <h3>買ったもの</h3>
+  <h3 class="posts-title">買ったもの</h3>
   <table class='table table-hover table-inverse'>
     <thead>
       <tr>

@@ -13,6 +13,10 @@ table {
   color: white;
 }
 
+.month-date {
+  margin-top: 100px;
+}
+
 th, td {
   padding: 10px;
   vertical-align: middle;
@@ -57,8 +61,25 @@ th {
 }
 
 @media screen and (max-width: 425px) {
+  .month-date {
+    margin-top: 40px;
+  }
+  
+  .month-view {
+    font-size: 34px;
+  }
+  
+  .posts-title{
+    font-size: 20px;
+  }
+  
   th {
     font-size: 10px;
+  }
+
+  th > .btn {
+    width: 60px;
+    font-size: 5px;
   }
 
 }
