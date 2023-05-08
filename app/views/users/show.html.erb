@@ -43,7 +43,7 @@
               ¥ <%= user.total_unbuy %>
             </div>
           <% end %>
-          <div class="d-flex justify-content-center">
+          <div class="d-flex align-items-center">
             <%= paginate @users %>
           </div>
         </div>
@@ -65,7 +65,7 @@
 
         <!--過去の我慢金額の合計-->
         <div class="col-md-3 text-center total-unbuy small-text">
-          <p class="under-text">我慢合計</p>
+          <p class="under-text">今までの我慢合計</p>
           <p class="my-money"><strong>¥<%= @all_unbuy %></strong></p>
         </div>
 
@@ -73,7 +73,7 @@
         <div class="col-md-4 d-flex align-items-center justify-content-center">
           <div class="d-flex flex-column justify-content-between">
             <%= link_to "記録する", new_post_path, class: "btn btn-dark btn-block btn-tall" %>
-            <%= link_to "悩んでいるものリスト", posts_path, class: "btn btn-dark btn-block btn-tall" %>
+            <%= link_to "記録一覧", posts_path, class: "btn btn-dark btn-block btn-tall" %>
           </div>
         </div>
 

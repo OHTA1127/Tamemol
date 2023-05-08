@@ -39,6 +39,11 @@
   margin: 20px 20px 20px 60px;
 }
 
+.user_info > .rounded-image {
+  width: 130px;
+  height: 130px;
+}
+
 .money_text {
   margin-right: 10px;
   display: flex;
@@ -137,30 +142,35 @@
   .container-fluid {
     max-width: 90%;
   }
-  
+
   .user_info {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 10px 10px 10px 10px;
   }
-  
+
+  .user_info > .rounded-image {
+    width: 70px;
+    height: 70px;
+  }
+
   .money_text {
     margin: 0;
     width: 33%;
     font-size: 15px;
   }
-  
+
   .money_text span {
     font-size: 20px;
   }
-  
+
   .wrapper {
     display: flex;
     justify-content: space-between;
     padding: 15px 0;
   }
-  
+
   .goal_text {
     font-size: 20px;
   }
@@ -169,7 +179,7 @@
     text-align: center;
     margin-top: 40px;
   }
-  
+
   .d-flex.align-items-center {
     display: flex;
     align-items: center;
@@ -180,18 +190,18 @@
     width: 50px;
     height: 50px;
   }
-  
+
   .goal-rate,
   .total-unbuy {
     padding: 10px 0;
     font-size: 40px;
   }
-  
+
   .btn-block {
     display: block;
     margin-right: 0;
   }
-  
+
   .my-money {
     font-size: 40px;
   }
@@ -201,7 +211,7 @@
     display: flex;
     display: inline-blocl;
   }
-  
+
   .btn-tall{
   height: 35px;
   margin: 5px 0;
@@ -212,46 +222,46 @@
   .container-fluid {
     max-width: 90%;
   }
-  
+
   .money_text {
     margin: 0;
     width: 33%;
     font-size: 10px;
   }
-  
+
   .money_text span {
     font-size: 15px;
   }
-  
+
   .goal_text {
     font-size: 15px;
   }
-  
+
   .all_users {
     text-align: center;
     margin-top: 20px;
   }
-  
+
   .btn-tall{
   height: 35px;
   margin: 5px 0;
   }
-  
+
   .goal-rate,
   .total-unbuy {
     // padding: 10px 0;
     font-size: 25px;
   }
-  
+
   .my-money {
     font-size: 25px;
   }
-  
+
   .goal-rate-text,
   .under-text {
     font-size: 20px;
   }
-  
+
   .index-main {
     margin-top: 0px;
   }
