@@ -96,6 +96,7 @@
   margin: 40px 0;
 }
 
+
 .col-md-4 {
   height: 300px;
   margin-top: 30px;
@@ -134,7 +135,7 @@
 }
 
 .border {
-  border: solid 2px white;
+  border: 10px solid black;
 }
 
 
@@ -179,7 +180,7 @@
     text-align: center;
     margin-top: 40px;
   }
-  
+
 
   .d-flex.align-items-center {
     display: flex;
@@ -187,7 +188,7 @@
     float: left;
     padding-left: 0px;
   }
-  
+
   .d-flex.align-items-center img {
     width: 25px;
     height: 25px;
@@ -207,11 +208,11 @@
   .my-money {
     font-size: 40px;
   }
-  
+
   .col-md-4 {
     height: 300px;
   }
-  
+
   .goal-rate-text,
   .under-text {
     font-size: 20px;
@@ -247,13 +248,13 @@
     text-align: center;
     margin-top: 20px;
   }
-  
+
   .d-flex.align-items-center img {
     width: 25px;
     height: 25px;
     margin-left: 20px;
   }
-  
+
   .btn-tall{
   height: 35px;
   margin: 5px 0;
@@ -279,16 +280,16 @@
   .col-md-4 {
     height: 100px;
   }
-  
+
   .goal-rate-text {
     margin-bottom: 0px;
   }
-  
+
   .goal-rate-text,
   .under-text {
     font-size: 10px;
   }
-  
+
   .index-main {
     margin-top: 0px;
   }
