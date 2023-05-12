@@ -34,10 +34,10 @@ class PostsController < ApplicationController
     #表示する月の選択
     @selected_month = Date.parse(params[:month]) rescue Date.today.at_beginning_of_month
 
-    #1ヶ月間に買ったものの一覧
+    #1ヶ月間に買ったものの一覧（purchase_statusがtrueのデータ）
     @posts_buy = Post.where(purchase_status: true).where(user_id: current_user.id).where(created_at: @month.in_time_zone.all_month).order("created_at DESC")
 
-    #1ヶ月に我慢したものの一覧
+    #1ヶ月に我慢したものの一覧（purchase_statusがfalseのデータ）
     @posts_unbuy = Post.where(purchase_status: false).where(user_id: current_user.id).where(created_at: @month.in_time_zone.all_month).order("created_at DESC")
 
   end
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    #「purchase_status」がtrueかfalseによって振り分ける
+    #「purchase_status」がfalseからtrueに変更する
     @post.purchase_status = true
 
     @post.save
