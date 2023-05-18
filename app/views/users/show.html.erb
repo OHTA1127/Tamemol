@@ -57,7 +57,22 @@
         <!--ユーザーの今月の我慢目標達成率-->
         <div class="col-md-4 text-center goal-rate small-text border">
           <p class="goal-rate-text">目標達成率</p>
-          <p class="my-money"><strong><%= @completion_rate * 100 %>%</strong></p>
+          <!--目標達成率が２０％以下の時は赤、50％以下の時は黄色、70％以下の時は緑、それ以上は青になる-->
+          <p class="my-money" style="color:
+            <% if @completion_rate <= 0.2 %>
+              #ff6b6b;
+            <% elsif @completion_rate <= 0.5 %>
+              #fcdd57;
+            <% elsif @completion_rate <= 0.7 %>
+              #43FF6B;
+            <% else %>
+              #80d4ff;
+            <% end %>"
+          >
+          
+            <strong><%= @completion_rate * 100 %>%</strong>
+          </p>
+          
           <% if @user.goal_money.present? && @user.goal_money > 0 %>
             <p class="goal-rate-text">目標達成まであと...<strong>¥<%= @user.goal_money - @total_unbuy %></strong></p>
           <% end %>
