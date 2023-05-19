@@ -30,6 +30,7 @@ class PostsController < ApplicationController
 
     # 1ヶ月ごとのデータを収集し、Viewに表示する
     @total_posts = Post.where(user_id: current_user.id).order("created_at DESC")
+    # 月ごとの投稿をまとめたハッシュであり、キーは月の最初の日時（YYYY-MM-01 00:00:00）
     @total_posts_month = @total_posts.group_by { |post| post.created_at.beginning_of_month }
 
     #表示する月の選択

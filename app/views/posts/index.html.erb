@@ -1,6 +1,7 @@
 <div class="container">
   <!--表示する月の選択-->
   <div class="month-date">
+    <!--@total_posts_monthの.keysメソッドでハッシュのキー（月の最初の日時）を返し、.mapメソッドで配列の要素に指定された処理を行い、新しい配列を生成する-->
     <%= form_tag(posts_path, method: "get") do %>
       <%= select_tag "month", options_for_select(@total_posts_month.keys.map{ |date| [date.strftime('%Y年%m月'), date] }, selected: params[:month]), include_blank: false %>
       <%= submit_tag "月を選択" %>
