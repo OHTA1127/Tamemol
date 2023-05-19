@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 # 記録一覧ページ
   def index
 
+    # 日付に関するデータを収集
     @month = params[:month]
     if @month.nil?
     @month = Date.current
@@ -49,12 +50,12 @@ class PostsController < ApplicationController
 
   #「買った」ボタンを押した際に「買ったもの」に振り分けられる
   def update
-    @post = Post.find(params[:id])
+    post = Post.find(params[:id])
 
     #「purchase_status」がfalseからtrueに変更する
-    @post.purchase_status = true
+    post.purchase_status = true
 
-    @post.save
+    post.save
     redirect_to posts_path
 
   end
