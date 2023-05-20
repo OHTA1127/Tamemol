@@ -61,6 +61,7 @@ class PostsController < ApplicationController
 
   end
 
+  # 投稿データの削除
   def destroy
     post = Post.find(params[:id])
     post.destroy
