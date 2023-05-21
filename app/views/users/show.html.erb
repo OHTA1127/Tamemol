@@ -57,13 +57,13 @@
         <!--ユーザーの今月の我慢目標達成率-->
         <div class="col-md-4 text-center goal-rate small-text border">
           <p class="goal-rate-text">目標達成率</p>
-          <!--目標達成率が２０％以下の時は赤、50％以下の時は黄色、70％以下の時は緑、それ以上は青になる-->
+          <!--目標達成率が２０％以下の時は赤、50％以下の時は黄色、80％以下の時は緑、それ以上は青になる-->
           <p class="my-money" style="color:
             <% if @completion_rate <= 0.2 %>
               #ff6b6b;
             <% elsif @completion_rate <= 0.5 %>
               #fcdd57;
-            <% elsif @completion_rate <= 0.7 %>
+            <% elsif @completion_rate <= 0.8 %>
               #43FF6B;
             <% else %>
               #80d4ff;
