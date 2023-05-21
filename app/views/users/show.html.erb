@@ -8,7 +8,7 @@
         <div class="col-md-9 border">
           <div class="wrapper">
             <div class="user_info">
-              <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpg", class: "rounded-image"%>
+              <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "default-image.jpg", class: "rounded-image"%>
               <strong style="font-size: 24px;"><%= @user.name %></strong>
               <%= link_to "編集", edit_user_path(@user), class: "btn btn-dark" %>
             </div>
@@ -39,7 +39,7 @@
           <% end %>
           <% @users.each do |user| %>
             <div class="d-flex align-items-center" style="margin-bottom: 10px;">
-              <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image", style: "margin-right: 20px" %>
+              <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpg', fallback: "default-image.jpg", class: "rounded-image", style: "margin-right: 20px" %>
               ¥ <%= user.total_unbuy %>
             </div>
           <% end %>
@@ -69,14 +69,14 @@
               #80d4ff;
             <% end %>"
           >
-          
+
             <strong><%= @completion_rate * 100 %>%</strong>
           </p>
-          
+
           <% if @user.goal_money.present? && @user.goal_money > 0 %>
             <p class="goal-rate-text">目標達成まであと...<strong>¥<%= @user.goal_money - @total_unbuy %></strong></p>
           <% end %>
-          
+
         </div>
 
         <!--過去の我慢金額の合計-->

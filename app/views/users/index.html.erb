@@ -5,7 +5,7 @@
     <% @users.each do |user| %>
       <div class="card bg-transparent border" style="width: 18rem;">
         <div class="card-body">
-          <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpg", class: "rounded-image"%>
+          <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "default-image.jpg", class: "rounded-image"%>
           <h5 class="card-title"><%= user.name %></h5>
           <p class="card-text">目標：<%= user.goal_comment %></p>
           <p class="card-text">目標金額: ¥<%= user.goal_money %></p>
