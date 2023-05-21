@@ -8,7 +8,7 @@
         <div class="col-md-9 border">
           <div class="wrapper">
             <div class="user_info">
-              <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpeg", class: "rounded-image"%>
+              <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "default-image.jpg", class: "rounded-image"%>
               <strong style="font-size: 24px;"><%= @user.name %></strong>
               <%= link_to "編集", edit_user_path(@user), class: "btn btn-dark" %>
             </div>
